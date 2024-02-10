@@ -1,0 +1,27 @@
+Below are the user stories for each component of the eCommerce website.
+Each component will have its own Java class following the naming convention "ComponentPageTest.java".
+
+Login page:
+
+As a standard user, I should be able to log in and redirected to the store when using my correct username and password.
+As a standard user, I should be denied log in if I input the incorrect username and password.
+As a standard user, I should be able to log out from the store page.
+As a locked out user, I should see an error message when trying to log in.
+As a problem user, I should be able to log in and see the store page however the images should not be correct.
+As a performance glitch user, I should experience high loading times after logging in.
+
+Store page:
+Test redirects - Twitter, Facebook, LinkedIn, About
+
+As a user, I want to be able to sort the products alphabetically.
+As a user, I want to be able to sort the products by price asc / desc.
+As a user, I want to be able to add all of the items to my cart.
+As a user, I want to be able to refresh the page and still have the items in my cart.
+As a user, I want to add the correct item as displayed on the home page to my cart.
+As a user, I want to be able to click on an items title to focus it, and add it to cart from there.
+
+Checkout page:
+
+As a user, I want to be able to complete the whole checkout process.
+As a user, I want the correct balance to be displayed during the checkout process.
+As an ecommerce store, I want users to input their first and last name, and postal code during checkout.
