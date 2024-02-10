@@ -82,6 +82,34 @@ public class CheckoutPageTest {
         Assertions.assertEquals("Error: First Name is required", error);
     }
 
+    @Test
+    public void testLastNameMandatory() {
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+        driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+        driver.findElement(By.id("checkout")).click();
+        driver.findElement(By.id("first-name")).sendKeys("Justin");
+        driver.findElement(By.id("postal-code")).sendKeys("7550");
+        driver.findElement(By.id("continue")).click();
+
+        String error = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
+
+        Assertions.assertEquals("Error: Last Name is required", error);
+    }
+
+    @Test
+    public void testPostalCodeMandatory() {
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+        driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+        driver.findElement(By.id("checkout")).click();
+        driver.findElement(By.id("first-name")).sendKeys("Justin");
+        driver.findElement(By.id("last-name")).sendKeys("Carstens");
+        driver.findElement(By.id("continue")).click();
+
+        String error = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
+
+        Assertions.assertEquals("Error: Postal Code is required", error);
+    }
+
     @AfterAll
     public static void tearDown() {
         WebDriverManager.closeDriver();
