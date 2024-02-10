@@ -16,7 +16,7 @@ Store page:
 
 As a user, I want to be able to sort the products alphabetically.
 As a user, I want to be able to sort the products by price asc / desc.
-As a user, I want to be able to add all of the items to my cart.
+[DONE]As a user, I want to be able to add all of the items to my cart.
 As a user, I want to be able to refresh the page and still have the items in my cart.
 As a user, I want to add the correct item as displayed on the home page to my cart.
 As a user, I want to be able to click on an items title to focus it, and add it to cart from there.

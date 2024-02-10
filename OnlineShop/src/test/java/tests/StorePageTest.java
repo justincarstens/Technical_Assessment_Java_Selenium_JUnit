@@ -6,7 +6,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utils.WebDriverManager;
+
+import java.util.List;
 
 
 public class StorePageTest {
@@ -45,6 +48,22 @@ public class StorePageTest {
         driver.findElement(By.id("react-burger-menu-btn")).click();
         String link = driver.findElement(By.id("about_sidebar_link")).getAttribute("href");
         Assertions.assertEquals("https://saucelabs.com/", link);
+    }
+
+    @Test
+    public void addAllItemsToCart() {
+
+        List<WebElement> listItems = driver.findElements(By.cssSelector(".btn.btn_primary.btn_small.btn_inventory"));
+
+        for (WebElement webElement : listItems) {
+            webElement.click();
+        }
+
+        driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+        List<WebElement> listCart = driver.findElements(By.cssSelector(".cart_item"));
+
+        Assertions.assertEquals(listCart.size(), listItems.size());
+
     }
 
     @AfterAll
