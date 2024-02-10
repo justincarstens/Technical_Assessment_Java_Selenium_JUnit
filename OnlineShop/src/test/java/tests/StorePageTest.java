@@ -27,6 +27,10 @@ public class StorePageTest {
         driver.findElement(By.id("login-button")).click();
     }
 
+    //Redirect tests: testing whether the <a> tag reference point is the same as expected.
+    //The safer bet would probably be opening the link as a user would and confirming the new URL is as expected.
+        //This would come at the trade-off of potentially slower test execution as it would depend on 3rd party loading times.
+
     @Test
     public void testTwitterRedirect() {
         String link = driver.findElement(By.className("social_twitter")).findElement(By.tagName("a")).getAttribute("href");
@@ -51,6 +55,12 @@ public class StorePageTest {
         String link = driver.findElement(By.id("about_sidebar_link")).getAttribute("href");
         Assertions.assertEquals("https://saucelabs.com/", link);
     }
+
+    //For the sorting tests, my thought process was ->
+        //Get all elements' prices unsorted.
+        //Sort the list of prices with java method.
+        //Store server-side sorted items in separate array.
+        //If the 2 lists are the same then the test passes.
 
     @Test
     public void testSortingItemsByPriceAsc() {
@@ -113,7 +123,6 @@ public class StorePageTest {
         List<WebElement> listCart = driver.findElements(By.cssSelector(".cart_item"));
 
         Assertions.assertEquals(listCart.size(), listItems.size());
-
     }
 
     @Test

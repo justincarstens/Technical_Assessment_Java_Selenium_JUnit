@@ -12,7 +12,7 @@ public class WebDriverManager {
 
         ChromeOptions options = new ChromeOptions();
 
-            //Added local Chrome for Testing path to the WebDriver
+            //Add local Chrome for Testing path to the WebDriver
         options.setBinary("J:\\Users\\Justin\\Documents\\JAR_FILES\\Selenium\\chrome-win64\\chrome.exe");
         System.setProperty("webdriver.chrome.driver", "J:\\Users\\Justin\\Documents\\JAR_FILES\\Selenium\\chromedriver-win64\\chromedriver.exe");
 

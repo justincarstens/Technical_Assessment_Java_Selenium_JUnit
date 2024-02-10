@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.WebDriverManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CheckoutPageTest {
@@ -40,6 +39,10 @@ public class CheckoutPageTest {
         Assertions.assertEquals("Thank you for your order!", element.getText());
     }
 
+    //In terms of practicality for real-world application, adding all the stores items to the cart is probably not the most viable.
+    //For that use case, I would store all the items in a list as I did here, but randomly select like 10% of the items to be tested.
+    //Therefore, everytime the test is executed, random items are tested.
+    //However, some use case would definitely be found in testing all the items within an ecommerce store automatically.
     @Test
     public void testCheckOutTotalBalance() {
 
