@@ -7,8 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.WebDriverManager;
 
+import java.time.Duration;
 import java.util.List;
 
 
@@ -64,6 +67,27 @@ public class StorePageTest {
 
         Assertions.assertEquals(listCart.size(), listItems.size());
 
+    }
+
+    @Test
+    public void testItemsInCartAfterRefresh() throws InterruptedException {
+
+        List<WebElement> listItems = driver.findElements(By.cssSelector(".btn.btn_primary.btn_small.btn_inventory"));
+
+        for (WebElement webElement : listItems) {
+            webElement.click();
+        }
+
+        driver.navigate().refresh();
+
+        /* I was unable to find an Explicit Wait condition relating to the page loading to completion, so I used a good old Thread.sleep.
+            The test passes without it but logic says that there should be some kind of wait after refreshing. */
+        Thread.sleep(1500);
+
+        driver.findElement(By.cssSelector(".shopping_cart_link")).click();
+        List<WebElement> listCart = driver.findElements(By.cssSelector(".cart_item"));
+
+        Assertions.assertEquals(listCart.size(), listItems.size());
     }
 
     @AfterAll
