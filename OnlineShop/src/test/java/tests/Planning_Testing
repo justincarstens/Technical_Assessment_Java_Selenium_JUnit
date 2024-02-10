@@ -23,6 +23,6 @@ As a user, I want to add the correct item as displayed on the home page to my ca
 
 Checkout page:
 
-As a user, I want to be able to complete the whole checkout process.
+[DONE]As a user, I want to be able to complete the whole checkout process.
 As a user, I want the correct balance to be displayed during the checkout process.
 As an ecommerce store, I want users to input their first and last name, and postal code during checkout.
