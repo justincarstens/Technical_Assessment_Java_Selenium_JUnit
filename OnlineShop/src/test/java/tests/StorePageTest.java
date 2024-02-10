@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.WebDriverManager;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -48,6 +50,54 @@ public class StorePageTest {
         driver.findElement(By.id("react-burger-menu-btn")).click();
         String link = driver.findElement(By.id("about_sidebar_link")).getAttribute("href");
         Assertions.assertEquals("https://saucelabs.com/", link);
+    }
+
+    @Test
+    public void testSortingItemsByPriceAsc() {
+
+        List<WebElement> listItems = driver.findElements(By.cssSelector(".inventory_item_price"));
+        List<Float> itemPrices =  new ArrayList<>();
+
+        for (WebElement webElement : listItems) {
+            itemPrices.add(Float.parseFloat(webElement.getText().substring(1)));
+        }
+
+        Collections.sort(itemPrices);
+
+        driver.findElement(By.cssSelector("option[value='lohi']")).click();
+
+        List<WebElement> sortedListItems = driver.findElements(By.cssSelector(".inventory_item_price"));
+        List<Float> sortedItemPrices =  new ArrayList<>();
+
+        for (WebElement webElement : sortedListItems) {
+            sortedItemPrices.add(Float.parseFloat(webElement.getText().substring(1)));
+        }
+
+        Assertions.assertEquals(itemPrices, sortedItemPrices);
+    }
+
+    @Test
+    public void testSortingItemsByPriceDesc() {
+
+        List<WebElement> listItems = driver.findElements(By.cssSelector(".inventory_item_price"));
+        List<Float> itemPrices =  new ArrayList<>();
+
+        for (WebElement webElement : listItems) {
+            itemPrices.add(Float.parseFloat(webElement.getText().substring(1)));
+        }
+
+        Collections.sort(itemPrices, Collections.reverseOrder());
+
+        driver.findElement(By.cssSelector("option[value='hilo']")).click();
+
+        List<WebElement> sortedListItems = driver.findElements(By.cssSelector(".inventory_item_price"));
+        List<Float> sortedItemPrices =  new ArrayList<>();
+
+        for (WebElement webElement : sortedListItems) {
+            sortedItemPrices.add(Float.parseFloat(webElement.getText().substring(1)));
+        }
+
+        Assertions.assertEquals(itemPrices, sortedItemPrices);
     }
 
     @Test

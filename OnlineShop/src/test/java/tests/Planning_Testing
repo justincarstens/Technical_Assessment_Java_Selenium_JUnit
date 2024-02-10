@@ -14,8 +14,8 @@ Store page:
 
 [DONE]Test redirects - Twitter, Facebook, LinkedIn, About
 
-As a user, I want to be able to sort the products alphabetically.
-As a user, I want to be able to sort the products by price asc / desc.
+[DONE]As a user, I want to be able to sort the products alphabetically.
+[DONE]As a user, I want to be able to sort the products by price asc / desc.
 [DONE]As a user, I want to be able to add all of the items to my cart.
 [DONE]As a user, I want to be able to refresh the page and still have the items in my cart.
 As a user, I want to add the correct item as displayed on the home page to my cart.
