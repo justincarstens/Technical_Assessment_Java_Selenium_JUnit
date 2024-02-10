@@ -6,13 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.WebDriverManager;
 
-import java.time.Duration;
-import java.util.List;
 
 public class StorePageTest {
 
@@ -43,6 +38,13 @@ public class StorePageTest {
     public void testLinkedinRedirect() {
         String link = driver.findElement(By.className("social_linkedin")).findElement(By.tagName("a")).getAttribute("href");
         Assertions.assertEquals("https://www.linkedin.com/company/sauce-labs/", link);
+    }
+
+    @Test
+    public void testAboutRedirect() {
+        driver.findElement(By.id("react-burger-menu-btn")).click();
+        String link = driver.findElement(By.id("about_sidebar_link")).getAttribute("href");
+        Assertions.assertEquals("https://saucelabs.com/", link);
     }
 
     @AfterAll
