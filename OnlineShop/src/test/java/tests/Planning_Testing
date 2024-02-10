@@ -11,6 +11,7 @@ As a problem user, I should be able to log in and see the store page however the
 As a performance glitch user, I should experience high loading times after logging in.
 
 Store page:
+
 Test redirects - Twitter, Facebook, LinkedIn, About
 
 As a user, I want to be able to sort the products alphabetically.
