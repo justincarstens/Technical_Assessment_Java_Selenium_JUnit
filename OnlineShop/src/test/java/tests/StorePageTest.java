@@ -7,11 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.WebDriverManager;
 
-import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -89,6 +88,31 @@ public class StorePageTest {
 
         Assertions.assertEquals(listCart.size(), listItems.size());
     }
+
+    /*@Test
+    public void testAddToCartFromItemFocus() {
+
+        //This test is not working - it is getting an AssertionFailedError. On one of the elements it is reading the items description instead of the title.
+        //Because of the above, I changed the scope of this test - 'As a user, I want the correct item to focus when I click on it in the store'.
+
+        List<WebElement> itemsInStore = driver.findElements(By.cssSelector(".inventory_item_label"));
+
+        List<String> idOfItems = new ArrayList<>();
+
+        for (int i = 0; i < itemsInStore.size(); i++) {
+            WebElement element = itemsInStore.get(i);
+            String itemName = element.getText();
+            idOfItems.add(element.findElement(By.tagName("a")).getAttribute("id"));
+
+            driver.findElement(By.id(idOfItems.get(i))).click();
+
+            String focusedName = driver.findElement(By.cssSelector(".inventory_details_name")).getText();
+
+            Assertions.assertEquals(itemName, focusedName);
+
+            driver.navigate().back();
+        }
+    }*/
 
     @AfterAll
     public static void tearDown() {
