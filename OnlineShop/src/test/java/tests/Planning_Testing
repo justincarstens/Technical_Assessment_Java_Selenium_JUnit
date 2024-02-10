@@ -3,7 +3,7 @@ Each component will have its own Java class following the naming convention "Com
 
 Login page:
 
-As a standard user, I should be able to log in and redirected to the store when using my correct username and password.
+[DONE]As a standard user, I should be able to log in and redirected to the store when using my correct username and password.
 As a standard user, I should be denied log in if I input the incorrect username and password.
 As a standard user, I should be able to log out from the store page.
 As a locked out user, I should see an error message when trying to log in.
