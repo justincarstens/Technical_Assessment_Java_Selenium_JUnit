@@ -6,7 +6,7 @@ Login page:
 [DONE]As a standard user, I should be able to log in and redirected to the store when using my correct username and password.
 [DONE]As a standard user, I should be denied log in if I input the incorrect username and password.
 [DONE]As a standard user, I should be able to log out from the store page.
-As a locked out user, I should see an error message when trying to log in.
+[DONE]As a locked out user, I should see an error message when trying to log in.
 As a problem user, I should be able to log in and see the store page however the images should not be correct.
 As a performance glitch user, I should experience high loading times after logging in.
 

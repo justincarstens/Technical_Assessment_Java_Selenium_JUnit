@@ -61,6 +61,19 @@ public class LoginPageTest {
 
     }
 
+    @Test
+    public void testLockedOutUserLogin() {
+        driver.get("https://qa-challenge.codesubmit.io/");
+        driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3[data-test='error']")));
+
+        Assertions.assertEquals("Epic sadface: Sorry, this user has been locked out.", errorMessage.getText());
+    }
+
     @AfterAll
     public static void tearDown() {
         WebDriverManager.closeDriver();
