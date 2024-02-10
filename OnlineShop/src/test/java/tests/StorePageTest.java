@@ -9,8 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.WebDriverManager;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
