@@ -86,7 +86,7 @@ public class StorePageTest {
             itemPrices.add(Float.parseFloat(webElement.getText().substring(1)));
         }
 
-        Collections.sort(itemPrices, Collections.reverseOrder());
+        itemPrices.sort(Collections.reverseOrder());
 
         driver.findElement(By.cssSelector("option[value='hilo']")).click();
 
