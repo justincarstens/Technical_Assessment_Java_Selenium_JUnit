@@ -4,7 +4,7 @@ Your assignment is to write automated test cases for an online shop to test the 
 
 ### Brief
 
-The product team at Impact has come up with a [simple MVP for an online shop](https://qa-challenge.codesubmit.io). Help the team get confidence in further development by automatically testing the most critical features of the app by doing the following:
+The product team at **REDACTED** has come up with a [simple MVP for an online shop](https://qa-challenge.codesubmit.io). Help the team get confidence in further development by automatically testing the most critical features of the app by doing the following:
 
 ### Tasks
 
@@ -39,5 +39,3 @@ Make sure to test scenarios for all provided user accounts.
 Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
 
 **Have fun building!** 🚀
-
-The Impact Team
